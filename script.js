@@ -137,17 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* ---------- Contact form (demo only — wire to a real backend) ---------- */
-    const form = document.getElementById("contactForm");
-    const note = document.getElementById("formNote");
-    if (form && note) {
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            note.textContent = "Thanks — this demo form doesn't send yet. Connect it to Formspree, EmailJS, or your own backend.";
-            form.reset();
-        });
-    }
-
     /* ---------- Footer year ---------- */
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();

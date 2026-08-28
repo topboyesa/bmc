@@ -367,15 +367,8 @@ button { font-family: inherit; }
 
 .giving-section { background: var(--paper-2); padding: 60px 5% 90px; }
 .giving-container {
-    max-width: 920px;
+    max-width: 480px;
     margin: -46px auto 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-}
-.giving-container-single {
-    grid-template-columns: 1fr;
-    max-width: 440px;
 }
 .giving-card {
     background: var(--paper);
@@ -399,35 +392,23 @@ button { font-family: inherit; }
 .giving-icon svg { width: 26px; height: 26px; }
 .giving-card h2 { font-size: 1.4rem; margin-bottom: 0.4em; }
 .giving-card > p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 22px; }
-.payment-details {
-    background: var(--paper-2);
-    padding: 18px 20px;
+.payment-poster {
+    width: 100%;
     border-radius: 10px;
-    text-align: left;
     border: 1px solid var(--border);
-}
-.payment-details p { margin-bottom: 8px; font-size: 0.95rem; }
-.payment-details p:last-child { margin-bottom: 0; }
-.highlight {
-    background: #fcf3cf;
-    padding: 2px 7px;
-    border-radius: 4px;
-    font-weight: 700;
-    color: var(--ink);
+    box-shadow: 0 8px 20px rgba(16,25,43,0.08);
 }
 
 /* ============ CONTACT ============ */
 .contact-section { background: var(--paper); padding: 90px 5%; }
 .contact-container {
-    max-width: var(--max-width);
+    max-width: 640px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    text-align: center;
 }
-.contact-info h2, .contact-form h2 { font-size: 1.7rem; }
+.contact-info h2 { font-size: 1.7rem; }
 .contact-info > p { color: var(--text-muted); margin-bottom: 30px; }
-.info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
+.info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; text-align: left; }
 .info-icon {
     display: flex; align-items: center; justify-content: center;
     width: 42px; height: 42px;
@@ -439,33 +420,8 @@ button { font-family: inherit; }
 .info-icon svg { width: 20px; height: 20px; }
 .info-item h3 { font-size: 1.02rem; margin-bottom: 2px; }
 .info-item p { color: var(--text-muted); margin: 0; }
-
-.contact-form form { display: flex; flex-direction: column; gap: 15px; }
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 13px 16px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: inherit;
-    background: var(--paper-2);
-    outline: none;
-    transition: border-color var(--transition-base);
-}
-.contact-form input:focus, .contact-form textarea:focus { border-color: var(--ink); }
-.submit-btn {
-    background: var(--ink);
-    color: var(--text-on-ink);
-    padding: 13px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background var(--transition-base);
-}
-.submit-btn:hover { background: var(--ink-2); }
-.form-note { min-height: 1.2em; color: var(--mpesa-green); font-weight: 600; font-size: 0.9rem; margin: 4px 0 0; }
+.info-item p a { color: var(--text-muted); text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; transition: color var(--transition-base); }
+.info-item p a:hover { color: var(--gold-deep); }
 
 /* ============ FOOTER ============ */
 .main-footer { background: var(--ink); color: var(--text-on-ink); padding: 60px 5% 24px; }
@@ -491,7 +447,6 @@ button { font-family: inherit; }
 /* ============ RESPONSIVE ============ */
 @media (max-width: 900px) {
     .info-grid { grid-template-columns: 1fr; }
-    .giving-container:not(.giving-container-single) { grid-template-columns: 1fr; margin-top: -20px; }
 }
 
 @media (max-width: 800px) {
@@ -515,7 +470,8 @@ button { font-family: inherit; }
 }
 
 @media (max-width: 700px) {
-    .contact-container, .footer-content { grid-template-columns: 1fr; gap: 36px; }
+    .footer-content { grid-template-columns: 1fr; gap: 36px; }
     .section { padding: 64px 0; }
     .hero { min-height: 82vh; }
+    .giving-card { padding: 32px 20px; }
 }
